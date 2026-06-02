@@ -20,7 +20,7 @@ button {
   cursor: pointer;
 }
 body {
-  background: #ffc;
+  background: #fff; /*시간이 부족해서 바꾼는걸 생각 못함*/
   color: #333;
 }
 
@@ -63,7 +63,7 @@ nav > ul > li.on > a {
 }
 
 .sub {
-  display: none;
+  display: none; /*처음에는 서브 메뉴가 보이지 않도록 설정*/
   width: calc(
     100vw - 200px
   ); /*100vw를 해야 공간이 생겨서 sub 메뉴들이 가로로 나열됨*/
@@ -72,7 +72,6 @@ nav > ul > li.on > a {
   left: 160px; /*시간이 부족해서 미세조정못함*/
   background: rgba(0, 0, 0, 0.5);
   z-index: 10;
-  display: none; /*처음에는 서브 메뉴가 보이지 않도록 설정*/
 }
 
 .sub li {
