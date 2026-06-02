@@ -1,0 +1,233 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+button {
+  cursor: pointer;
+}
+body {
+  background: #ffc;
+  color: #333;
+}
+
+.wrap {
+  width: 100%;
+  height: 970px;
+  margin: 0 auto;
+}
+.main {
+  width: 100%;
+  height: 850px;
+  background: #333;
+  display: flex;
+}
+header {
+  width: 200px;
+  height: 850px;
+  background: green;
+  padding: 100px 0; /*시간이 부족해서 미세조정 못함*/
+}
+nav {
+  width: 200px;
+  padding: 20px;
+  color: #fff;
+  text-align: center; /*시간이 부족해서 미세조정 못함*/
+}
+nav > ul > li {
+  position: relative; /*.sub의 기준점*/
+}
+nav > ul > li > a {
+  background: blue;
+  color: #fff;
+  padding: 10px;
+}
+nav > ul > li:hover > a,
+nav > ul > li > a:focus,
+nav > ul > li.on > a {
+  background: #369;
+  color: #fff;
+}
+
+.sub {
+  display: none;
+  width: calc(
+    100vw - 200px
+  ); /*100vw를 해야 공간이 생겨서 sub 메뉴들이 가로로 나열됨*/
+  position: absolute; /*오른쪽에서 보여줘야해서 */
+  top: 0;
+  left: 160px; /*시간이 부족해서 미세조정못함*/
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: none; /*처음에는 서브 메뉴가 보이지 않도록 설정*/
+}
+
+.sub li {
+  float: left; /*.sub를 가로로 나열하기 위해*/
+}
+.sub > li > a {
+  width: 200px;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+.sub li a:hover,
+.sub li a:focus,
+.sub li.on a {
+  background: #fff;
+  color: #369;
+}
+
+.spot {
+  display: flex;
+  justify-content: center; /*시간이 부족해서 미세조정 못함*/
+  width: 200px;
+  padding: 20px;
+  color: #fff;
+}
+.spot a:hover {
+  /*시간이 부족해서 못함*/
+  text-decoration: underline;
+}
+.contents {
+  width: calc(100% - 200px);
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+}
+.slide {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.slide a {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slide a img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.banner {
+  width: 100%;
+  height: 200px;
+  background: #fff;
+  padding: 20px;
+}
+.banner a {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tab {
+  width: 100%;
+  height: 250px;
+  background: #fff;
+  position: relative; /* .tabcon의 기준점이 됩니다. */
+}
+.tabmenu {
+  display: flex;
+  text-align: center; /*공지사항과 갤러리 h2의 글씨가 가운데로 오게하려고했으나 시간이 부족해서 못함*/
+}
+.tabmenu > li {
+  width: 200px;
+  background: #ccc;
+  color: #000;
+}
+.tabmenu > li.on {
+  background: #369;
+  color: #fff;
+}
+.tabmenu > li.on .tabcon {
+  display: block;
+}
+
+.notice ul li a {
+  display: flex;
+  justify-content: space-between;
+}
+.notice ul li a:hover {
+  /*시간이 부족해서 못함*/
+  text-decoration: underline;
+}
+
+.gall > ul {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.gall ul li a img:hover {
+  /*시간이 부족해서 못함*/
+  opacity: 0.6;
+}
+.tabcon {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #369;
+  color: #fff;
+  display: none; /*처음에는 탭 컨텐츠가 보이지 않도록 설정*/
+  padding: 20px;
+}
+footer {
+  width: 100%;
+  height: 120px;
+  background: #999;
+  display: flex; /* justify-content: space-between; 대신 flex-start로 변경하여 왼쪽 정렬 */
+  justify-content: flex-start; /*기억이 나지않아 못함*/
+  align-items: center;
+  padding: 0 20px; /* 양옆 여백을 살짝 늘려 안정감을 줍니다 */
+  gap: 50px;
+  /* 로고와 오른쪽 내용 사이의 간격을 와이어프레임처럼 벌려줍니다 */
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start; /*기억이 나지않아 못함*/
+}
+.fmenu {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start; /*기억이 나지않아 못함*/
+  gap: 20px; /* 메뉴 글자 사이 간격을 넓혀 가독성을 높입니다 */
+  text-decoration: underline;
+  color: blue;
+}
+.popup {
+  position: fixed; /*상위 부모와 상관없이 오직 브라우저 화면(Viewport) 기준점*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background: #369; /*시간부족해서 못했음*/
+  color: #fff; /*시간부족해서 못했음*/
+  padding: 20px;
+  display: none; /*처음에는 팝업이 보이지 않도록 설정*/
+  z-index: 100;
+}
+.popup_innter {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* justify-content: center; 적용안됨.  align-items: center로 정렬 */
+  gap: 50px; /* 글자 사이 간격을 넓혀 가독성을 높입니다 */
+}
