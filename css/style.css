@@ -98,7 +98,10 @@ nav > ul > li.on > a {
   padding: 20px;
   color: #fff;
 }
-
+.spot a:hover {
+  /*시간이 부족해서 못함*/
+  text-decoration: underline;
+}
 .contents {
   width: calc(100% - 200px);
   height: 850px;
@@ -156,10 +159,15 @@ nav > ul > li.on > a {
   display: block;
 }
 
-.notice li a {
+.notice ul li a {
   display: flex;
   justify-content: space-between;
 }
+.notice ul li a:hover {
+  /*시간이 부족해서 못함*/
+  text-decoration: underline;
+}
+
 .gall > ul {
   display: flex;
   justify-content: space-around;
