@@ -78,12 +78,13 @@ nav > ul > li.on > a {
   float: left; /*.sub를 가로로 나열하기 위해*/
 }
 .sub > li > a {
+  /*nav랑 똑같이 하기*/
   width: 200px;
   padding: 10px;
   color: #fff;
   text-align: center;
 }
-.sub li a:hover,
+.sub li a:hover, /*nav랑 똑같은데 컬러만 바꾸기*/
 .sub li a:focus,
 .sub li.on a {
   background: #fff;
@@ -93,7 +94,7 @@ nav > ul > li.on > a {
 .spot {
   display: flex;
   justify-content: center; /*시간이 부족해서 미세조정 못함*/
-  width: 200px;
+  width: 200px; /*nav랑 똑같이 하기*/
   padding: 20px;
   color: #fff;
 }
@@ -101,11 +102,13 @@ nav > ul > li.on > a {
   /*시간이 부족해서 못함*/
   text-decoration: underline;
 }
+
 .contents {
   width: calc(100% - 200px);
   height: 850px;
   display: flex;
   flex-direction: column;
+  position: relative; /*.go의 기준점*/
 }
 .slide {
   width: 100%;
@@ -124,6 +127,24 @@ nav > ul > li.on > a {
   height: 400px;
   object-fit: cover;
 }
+/*.go 바로가기 빼먹음*/
+.go {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.go ul {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.go a:hover {
+  opacity: 0.6;
+}
 .banner {
   width: 100%;
   height: 200px;
@@ -135,6 +156,7 @@ nav > ul > li.on > a {
   justify-content: space-around;
   align-items: center;
 }
+
 .tab {
   width: 100%;
   height: 250px;
@@ -181,7 +203,7 @@ nav > ul > li.on > a {
   left: 0;
   width: 100%;
   height: 150px;
-  background: #369;
+  background: #369; /*.tabmenu > li.on과 같은 색상*/
   color: #fff;
   display: none; /*처음에는 탭 컨텐츠가 보이지 않도록 설정*/
   padding: 20px;
