@@ -227,7 +227,6 @@ footer {
 }
 .fmenu {
   display: flex;
-  gap: 20px;
   justify-content: flex-start; /*기억이 나지않아 못함*/
   gap: 20px; /* 메뉴 글자 사이 간격을 넓혀 가독성을 높입니다 */
   text-decoration: underline;
